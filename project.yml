@@ -1,0 +1,22 @@
+name: ArabicKeyboard
+options:
+  bundleIdPrefix: com.yourname.arabickeyboard
+  deploymentTarget:
+    iOS: "14.0"
+targets:
+  ArabicKeyboard:
+    type: application
+    platform: iOS
+    sources: [HostApp]
+    settings:
+      INFOPLIST_FILE: HostApp/Info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: com.yourname.arabickeyboard
+  KeyboardExtension:
+    type: app-extension
+    platform: iOS
+    sources: [KeyboardExtension]
+    settings:
+      INFOPLIST_FILE: KeyboardExtension/Info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: com.yourname.arabickeyboard.extension
+    dependencies:
+      - target: ArabicKeyboard
